@@ -1,12 +1,16 @@
 #include <stdio.h>
-
-void main(){
-	ptr = (int*)malloc(4*sizeof(int));
+#include <stdlib.h>
+int main(void){
+	printf("input number of integers to allocate\n");
+  int num; 
+  scanf("%d", &num);
+  int *ptr = (int*)malloc(num*sizeof(int));
 	if(ptr==NULL){
 		printf("not allocated\n");
 		exit(0);
 	} else {
-		printf("Memory successfully allocated\n");
+		printf("%d bytes of memory successfully allocated\n", (int)(num*sizeof(int)));
 		free (ptr);
 		printf("cleared\n");}
+return 0;
 }
